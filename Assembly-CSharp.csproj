@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\Explosion.cs" />
     <Compile Include="Assets\Scripts\Main.cs" />
     <Compile Include="Assets\Scripts\RaycastDrawer.cs" />
+    <Compile Include="Assets\Scripts\Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

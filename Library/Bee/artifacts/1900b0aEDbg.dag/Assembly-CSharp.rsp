@@ -359,6 +359,7 @@
 "Assets/Scripts/FigurCreater.cs"
 "Assets/Scripts/Main.cs"
 "Assets/Scripts/RaycastDrawer.cs"
+"Assets/Scripts/Utilities.cs"
 -langversion:9.0
 
 /deterministic

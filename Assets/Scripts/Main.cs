@@ -1,23 +1,25 @@
+using Assets.Scripts;
 using UnityEngine;
 
 public class Main : MonoBehaviour
 {
     [SerializeField] private RaycastDrawer _raycastDrawer;
 
+    [SerializeField] private FigurCreater _figurCreater;
+
+
     private void Start()
     {
-        Explosion explosionObject = FindObjectOfType<Explosion>();
-        Explosion[] explosionObjects = FindObjectsOfType<Explosion>();
-
         _raycastDrawer.objectHitEvent += DestoyObject;
     }
 
     public void DestoyObject(GameObject objectHit)
     {
-        if (objectHit.GetComponent<Explosion>())
+        Explosion explosionObject = objectHit.GetComponent<Explosion>();
+        
+        if(explosionObject != null )
         {
-            Explosion explosionObject = objectHit.GetComponent<Explosion>();
-            explosionObject.ExplodeObject();
+            explosionObject.ExplodeObject(_figurCreater);
         }
     }
 }

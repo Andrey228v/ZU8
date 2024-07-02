@@ -151,7 +151,7 @@ Transform:
   m_GameObject: {fileID: 55014078}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 9, y: 40.5, z: -12.5}
+  m_LocalPosition: {x: 9, y: 39.4, z: -11.3}
   m_LocalScale: {x: 1, y: 36.521473, z: 30.185831}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -382,6 +382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _raycastDrawer: {fileID: 963194229}
+  _figurCreater: {fileID: 1021033775}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c968a34e9e53994fb45cd9a1b2dc989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _container: {fileID: 551876279}
+  _particleExplosion: {fileID: 2236565605117646279, guid: ce00fbf34cbc9764696f9a5af5f1885c, type: 3}
   _chansDivision: 100
 --- !u!54 &732304651
 Rigidbody:
@@ -765,6 +766,50 @@ Transform:
   - {fileID: 1180912504}
   - {fileID: 1647548861}
   - {fileID: 55014079}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1021033774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1021033776}
+  - component: {fileID: 1021033775}
+  m_Layer: 0
+  m_Name: FigurCreater
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1021033775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021033774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72c07c12e8ca87745885aaca81ea9858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1021033776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021033774}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.8868675, y: -33.941887, z: 72.969376}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1123971703
@@ -1096,7 +1141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c968a34e9e53994fb45cd9a1b2dc989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _container: {fileID: 551876279}
+  _particleExplosion: {fileID: 2236565605117646279, guid: ce00fbf34cbc9764696f9a5af5f1885c, type: 3}
   _chansDivision: 100
 --- !u!54 &1329944721
 Rigidbody:
@@ -1173,7 +1218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c968a34e9e53994fb45cd9a1b2dc989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _container: {fileID: 551876279}
+  _particleExplosion: {fileID: 2236565605117646279, guid: ce00fbf34cbc9764696f9a5af5f1885c, type: 3}
   _chansDivision: 100
 --- !u!65 &1632211364
 BoxCollider:
@@ -1497,7 +1542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c968a34e9e53994fb45cd9a1b2dc989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _container: {fileID: 551876279}
+  _particleExplosion: {fileID: 2236565605117646279, guid: ce00fbf34cbc9764696f9a5af5f1885c, type: 3}
   _chansDivision: 100
 --- !u!54 &1806913796
 Rigidbody:
@@ -1641,3 +1686,4 @@ SceneRoots:
   - {fileID: 1818579573}
   - {fileID: 551876280}
   - {fileID: 1008613212}
+  - {fileID: 1021033776}
