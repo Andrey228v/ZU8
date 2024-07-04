@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5400794851863724521}
   - component: {fileID: 7829870109893411944}
   - component: {fileID: 899289983300570989}
+  - component: {fileID: -4083333997041285308}
   m_Layer: 0
   m_Name: CubePrefab
   m_TagString: Untagged
@@ -119,8 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c968a34e9e53994fb45cd9a1b2dc989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleExplosion: {fileID: 2236565605117646279}
-  _chansDivision: 100
+  _particle: {fileID: 2236565605117646279}
 --- !u!54 &899289983300570989
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -148,3 +148,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4083333997041285308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2236565605117646279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68fdb4422b37a80468dd3ad4b6104ddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chansDivision: 100

@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\FigurCreater.cs" />
     <Compile Include="Assets\Scripts\Explosion.cs" />
     <Compile Include="Assets\Scripts\Main.cs" />
+    <Compile Include="Assets\Scripts\Figure.cs" />
     <Compile Include="Assets\Scripts\RaycastDrawer.cs" />
     <Compile Include="Assets\Scripts\Utilities.cs" />
   </ItemGroup>

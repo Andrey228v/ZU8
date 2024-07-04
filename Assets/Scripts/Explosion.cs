@@ -3,55 +3,37 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    [SerializeField] private GameObject _particleExplosion;
+    [SerializeField] private GameObject _particle;
 
-    [SerializeField] private int _chansDivision = 100;
-
+    private Figure _figure;
     private int _minRandomParticles = 2;
     private int _maxRandomParticles = 6;
-    private int _minChans = 0;
-    private int _maxChans = 100;
 
-    private float _radiusOverlapSphere = 1f;
-
-    private Vector3 _explosionPos;
+    private void Start()
+    {
+        _figure = gameObject.GetComponent<Figure>();
+    }
 
     public void ExplodeObject(FigurCreater figurCreater)
     {
-        Destroy(gameObject);
-
-        int _chans = Utilities.GenerateRandomNumber(_minChans, _maxChans);
-
-        if(_chans < _chansDivision)
+        if (_figure.Division())
         {
-            _chansDivision /= 2;
-
             CreateParticleExplosion(figurCreater);
         }
+
+        Destroy(gameObject);
     }
 
     private void CreateParticleExplosion(FigurCreater figurCreater)
     {
-        _explosionPos = transform.position;
-
         int countParticle = Utilities.GenerateRandomNumber(_minRandomParticles, _maxRandomParticles);
+        int chansDivision = _figure.GetChansDivision() / 2;
 
         for (int i = 0; i < countParticle; i++)
         {
-            GameObject partExplode = figurCreater.CreateFigur(gameObject.transform.position, gameObject.transform.localScale / 2, _particleExplosion);
+            GameObject partExplode = figurCreater.CreateFigur(gameObject.transform.position, gameObject.transform.localScale / 2, _particle);
 
-            partExplode.GetComponent<Explosion>().SetChanseDivision(_chansDivision);
+            partExplode.GetComponent<Figure>().SetChansDivision(chansDivision);
         }
-    }
-
-    public void SetChanseDivision(int chans)
-    {
-        _chansDivision = chans;
-    }
-
-    private void OnDrawGizmos()
-    {
-        _explosionPos = transform.position;
-        Gizmos.DrawWireSphere(_explosionPos, _radiusOverlapSphere);
     }
 }

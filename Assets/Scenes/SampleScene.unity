@@ -491,6 +491,7 @@ GameObject:
   - component: {fileID: 732304647}
   - component: {fileID: 732304650}
   - component: {fileID: 732304651}
+  - component: {fileID: 732304652}
   m_Layer: 0
   m_Name: Cube2
   m_TagString: Untagged
@@ -596,8 +597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c968a34e9e53994fb45cd9a1b2dc989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleExplosion: {fileID: 2236565605117646279, guid: ce00fbf34cbc9764696f9a5af5f1885c, type: 3}
-  _chansDivision: 100
+  _particle: {fileID: 2236565605117646279, guid: ce00fbf34cbc9764696f9a5af5f1885c, type: 3}
 --- !u!54 &732304651
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -625,6 +625,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &732304652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732304645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68fdb4422b37a80468dd3ad4b6104ddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chansDivision: 100
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,6 +1049,7 @@ GameObject:
   - component: {fileID: 1329944717}
   - component: {fileID: 1329944720}
   - component: {fileID: 1329944721}
+  - component: {fileID: 1329944722}
   m_Layer: 0
   m_Name: Cube3
   m_TagString: Untagged
@@ -1141,8 +1155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c968a34e9e53994fb45cd9a1b2dc989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleExplosion: {fileID: 2236565605117646279, guid: ce00fbf34cbc9764696f9a5af5f1885c, type: 3}
-  _chansDivision: 100
+  _particle: {fileID: 2236565605117646279, guid: ce00fbf34cbc9764696f9a5af5f1885c, type: 3}
 --- !u!54 &1329944721
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1170,6 +1183,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1329944722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329944715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68fdb4422b37a80468dd3ad4b6104ddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chansDivision: 100
 --- !u!1 &1632211361
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,6 +1210,7 @@ GameObject:
   - component: {fileID: 1632211364}
   - component: {fileID: 1632211363}
   - component: {fileID: 1632211367}
+  - component: {fileID: 1632211368}
   m_Layer: 0
   m_Name: Cube4
   m_TagString: Untagged
@@ -1218,8 +1245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c968a34e9e53994fb45cd9a1b2dc989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleExplosion: {fileID: 2236565605117646279, guid: ce00fbf34cbc9764696f9a5af5f1885c, type: 3}
-  _chansDivision: 100
+  _particle: {fileID: 2236565605117646279, guid: ce00fbf34cbc9764696f9a5af5f1885c, type: 3}
 --- !u!65 &1632211364
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1318,6 +1344,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1632211368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632211361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68fdb4422b37a80468dd3ad4b6104ddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chansDivision: 100
 --- !u!1 &1647548860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1437,6 +1476,7 @@ GameObject:
   - component: {fileID: 1806913792}
   - component: {fileID: 1806913795}
   - component: {fileID: 1806913796}
+  - component: {fileID: 1806913797}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1542,8 +1582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c968a34e9e53994fb45cd9a1b2dc989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleExplosion: {fileID: 2236565605117646279, guid: ce00fbf34cbc9764696f9a5af5f1885c, type: 3}
-  _chansDivision: 100
+  _particle: {fileID: 2236565605117646279, guid: ce00fbf34cbc9764696f9a5af5f1885c, type: 3}
 --- !u!54 &1806913796
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1571,6 +1610,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1806913797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806913790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68fdb4422b37a80468dd3ad4b6104ddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chansDivision: 100
 --- !u!1 &1818579569
 GameObject:
   m_ObjectHideFlags: 0

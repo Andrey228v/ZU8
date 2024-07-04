@@ -357,6 +357,7 @@
 -analyzer:"D:/Program Files (x86)/2022.3.14f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Explosion.cs"
 "Assets/Scripts/FigurCreater.cs"
+"Assets/Scripts/Figure.cs"
 "Assets/Scripts/Main.cs"
 "Assets/Scripts/RaycastDrawer.cs"
 "Assets/Scripts/Utilities.cs"

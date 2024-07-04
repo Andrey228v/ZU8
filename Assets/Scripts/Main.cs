@@ -4,22 +4,27 @@ using UnityEngine;
 public class Main : MonoBehaviour
 {
     [SerializeField] private RaycastDrawer _raycastDrawer;
-
     [SerializeField] private FigurCreater _figurCreater;
 
+    private Explosion _explosion;
 
     private void Start()
     {
-        _raycastDrawer.objectHitEvent += DestoyObject;
+        _raycastDrawer.ObjectHited += DestoyObject; 
+    }
+
+    private void OnDestroy()
+    {
+        _raycastDrawer.ObjectHited -= DestoyObject;
     }
 
     public void DestoyObject(GameObject objectHit)
     {
-        Explosion explosionObject = objectHit.GetComponent<Explosion>();
-        
-        if(explosionObject != null )
+        _explosion = objectHit.GetComponent<Explosion>();
+
+        if (_explosion)
         {
-            explosionObject.ExplodeObject(_figurCreater);
+            _explosion.ExplodeObject(_figurCreater);
         }
     }
 }
