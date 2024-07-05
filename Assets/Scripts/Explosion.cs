@@ -1,6 +1,7 @@
 using Assets.Scripts;
 using UnityEngine;
 
+[RequireComponent(typeof(Figure))]
 public class Explosion : MonoBehaviour
 {
     [SerializeField] private GameObject _particle;
