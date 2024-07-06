@@ -12,7 +12,7 @@ public class Explosion : MonoBehaviour
 
     private void Start()
     {
-        _figure = gameObject.GetComponent<Figure>();
+        _figure = GetComponent<Figure>();
     }
 
     public void ExplodeObject(FigurCreater figurCreater)
@@ -28,13 +28,13 @@ public class Explosion : MonoBehaviour
     private void CreateParticleExplosion(FigurCreater figurCreater)
     {
         int countParticle = Utilities.GenerateRandomNumber(_minRandomParticles, _maxRandomParticles);
-        int chansDivision = _figure.GetChansDivision() / 2;
+        int chansDivision = _figure.GetChanceDivision() / 2;
 
         for (int i = 0; i < countParticle; i++)
         {
             GameObject partExplode = figurCreater.CreateFigur(gameObject.transform.position, gameObject.transform.localScale / 2, _particle);
 
-            partExplode.GetComponent<Figure>().SetChansDivision(chansDivision);
+            partExplode.GetComponent<Figure>().SetChanceDivision(chansDivision);
         }
     }
 }

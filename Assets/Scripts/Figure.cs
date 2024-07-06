@@ -4,33 +4,28 @@ namespace Assets.Scripts
 {
     public class Figure : MonoBehaviour
     {
-        [SerializeField] private int _chansDivision = 100;
+        [SerializeField] private int _chanceDivision = 100;
 
-        private int _minChans = 0;
-        private int _maxChans = 100;
+        private int _minChance = 0;
+        private int _maxChance = 100;
 
         public bool Division()
         {
-            bool isDivision = false;
+            int _chance = Utilities.GenerateRandomNumber(_minChance, _maxChance);
 
-            int _chans = Utilities.GenerateRandomNumber(_minChans, _maxChans);
-
-            if (_chans < _chansDivision)
-            {
-                isDivision = true;
-            }
+            bool isDivision = (_chance < _chanceDivision)? true : false;
 
             return isDivision;
         }
 
-        public int GetChansDivision()
+        public int GetChanceDivision()
         {
-            return _chansDivision;
+            return _chanceDivision;
         }
 
-        public void SetChansDivision(int chans)
+        public void SetChanceDivision(int chance)
         {
-            _chansDivision = chans;
+            _chanceDivision = chance;
         }
     }
 }
