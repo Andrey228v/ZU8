@@ -4,37 +4,33 @@ using UnityEngine;
 [RequireComponent(typeof(Figure))]
 public class Explosion : MonoBehaviour
 {
-    [SerializeField] private GameObject _particle;
-
     private Figure _figure;
     private int _minRandomParticles = 2;
-    private int _maxRandomParticles = 6;
+    private int _maxRandomParticles = 7;
+    private int _multiplicityDivision = 2;
 
-    private void Start()
+    public void ExplodeObject(FigurCreater figurCreater, GameObject explosionObject)
     {
-        _figure = GetComponent<Figure>();
-    }
+        _figure = explosionObject.GetComponent<Figure>();
 
-    public void ExplodeObject(FigurCreater figurCreater)
-    {
-        if (_figure.Division())
+        if (_figure.IsDivision())
         {
-            CreateParticleExplosion(figurCreater);
+            CreateParticleExplosion(figurCreater, explosionObject);
         }
 
-        Destroy(gameObject);
+        Destroy(explosionObject);
     }
 
-    private void CreateParticleExplosion(FigurCreater figurCreater)
+    private void CreateParticleExplosion(FigurCreater figurCreater, GameObject explosionObject)
     {
-        int countParticle = Utilities.GenerateRandomNumber(_minRandomParticles, _maxRandomParticles);
-        int chansDivision = _figure.GetChanceDivision() / 2;
+        int countParticle = Random.Range(_minRandomParticles, _maxRandomParticles);
+        int chansDivision = _figure.GetChanceDivision() / _multiplicityDivision;
 
         for (int i = 0; i < countParticle; i++)
         {
-            GameObject partExplode = figurCreater.CreateFigur(gameObject.transform.position, gameObject.transform.localScale / 2, _particle);
+            Figure partExplode = figurCreater.CreateFigur(explosionObject.transform.position, explosionObject.transform.localScale / _multiplicityDivision);
 
-            partExplode.GetComponent<Figure>().SetChanceDivision(chansDivision);
+            partExplode.SetChanceDivision(chansDivision);
         }
     }
 }

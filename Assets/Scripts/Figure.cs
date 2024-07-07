@@ -9,11 +9,11 @@ namespace Assets.Scripts
         private int _minChance = 0;
         private int _maxChance = 100;
 
-        public bool Division()
+        public bool IsDivision()
         {
-            int _chance = Utilities.GenerateRandomNumber(_minChance, _maxChance);
+            int _chance = Random.Range(_minChance, _maxChance);
 
-            bool isDivision = (_chance < _chanceDivision)? true : false;
+            bool isDivision = (_chance < _chanceDivision);
 
             return isDivision;
         }
@@ -25,7 +25,14 @@ namespace Assets.Scripts
 
         public void SetChanceDivision(int chance)
         {
-            _chanceDivision = chance;
+            if(_minChance <= chance)
+            {
+                _chanceDivision = chance;
+            }
+            else
+            {
+                _chanceDivision = _minChance;
+            }
         }
     }
 }

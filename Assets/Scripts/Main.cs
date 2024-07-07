@@ -1,10 +1,12 @@
 using Assets.Scripts;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Main : MonoBehaviour
 {
     [SerializeField] private RaycastDrawer _raycastDrawer;
     [SerializeField] private FigurCreater _figurCreater;
+    [SerializeField] private Explosion _explosion;
 
     private void Start()
     {
@@ -18,9 +20,9 @@ public class Main : MonoBehaviour
 
     public void DestoyObject(GameObject objectHit)
     {
-        if (objectHit.TryGetComponent(out Explosion explosion))
+        if (objectHit.GetComponent<Figure>())
         {
-            explosion.ExplodeObject(_figurCreater);
+            _explosion.ExplodeObject(_figurCreater, objectHit);
         }
     }
 }

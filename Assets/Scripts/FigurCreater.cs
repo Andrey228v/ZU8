@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
     public class FigurCreater : MonoBehaviour
     {
+        [SerializeField] private Figure _particle;
+
         private Material[] _materials;
         private int _minRandomMaterial = 0;
         private int _maxRandomMaterial = 6;
@@ -13,11 +16,11 @@ namespace Assets.Scripts
             _materials = Resources.LoadAll<Material>("CubeColor");
         }
 
-        public GameObject CreateFigur(Vector3 position, Vector3 scale, GameObject particleExlosion)
+        public Figure CreateFigur(Vector3 position, Vector3 scale)
         {
-            int material = Utilities.GenerateRandomNumber(_minRandomMaterial, _maxRandomMaterial);
+            int material = Random.Range(_minRandomMaterial, _maxRandomMaterial);
 
-            GameObject figure = Instantiate(particleExlosion);
+            Figure figure = Instantiate(_particle);
 
             figure.transform.position = position;
             figure.transform.localScale = scale;
