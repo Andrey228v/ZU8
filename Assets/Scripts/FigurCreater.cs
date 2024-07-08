@@ -1,11 +1,10 @@
-﻿using Assets.Scripts;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts
 {
     public class FigurCreater : MonoBehaviour
     {
-        [SerializeField] private Figure _particle;
+        [SerializeField] private Figure _particlePrefab;
 
         private Material[] _materials;
         private int _minRandomMaterial = 0;
@@ -20,7 +19,7 @@ namespace Assets.Scripts
         {
             int material = Random.Range(_minRandomMaterial, _maxRandomMaterial);
 
-            Figure figure = Instantiate(_particle);
+            Figure figure = Instantiate(_particlePrefab);
 
             figure.transform.position = position;
             figure.transform.localScale = scale;

@@ -13,9 +13,7 @@ namespace Assets.Scripts
         {
             int _chance = Random.Range(_minChance, _maxChance);
 
-            bool isDivision = (_chance < _chanceDivision);
-
-            return isDivision;
+            return _chance < _chanceDivision;
         }
 
         public int GetChanceDivision()
@@ -25,14 +23,7 @@ namespace Assets.Scripts
 
         public void SetChanceDivision(int chance)
         {
-            if(_minChance <= chance)
-            {
-                _chanceDivision = chance;
-            }
-            else
-            {
-                _chanceDivision = _minChance;
-            }
+            _chanceDivision = Mathf.Max(_minChance, chance);
         }
     }
 }

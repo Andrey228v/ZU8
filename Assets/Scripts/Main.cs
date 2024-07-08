@@ -1,5 +1,4 @@
 using Assets.Scripts;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Main : MonoBehaviour
@@ -20,9 +19,9 @@ public class Main : MonoBehaviour
 
     public void DestoyObject(GameObject objectHit)
     {
-        if (objectHit.GetComponent<Figure>())
+        if(objectHit.TryGetComponent(out  Figure figure))
         {
-            _explosion.ExplodeObject(_figurCreater, objectHit);
+            _explosion.ExplodeObject(_figurCreater, figure);
         }
     }
 }

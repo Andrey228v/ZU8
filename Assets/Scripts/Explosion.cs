@@ -1,54 +1,54 @@
 using Assets.Scripts;
 using UnityEngine;
 
-[RequireComponent(typeof(Figure))]
 public class Explosion : MonoBehaviour
 {
     [SerializeField] private float _radius;
     [SerializeField] private float _force;
 
-    private Figure _figure;
     private int _minRandomParticles = 2;
     private int _maxRandomParticles = 7;
     private int _multiplicityDivision = 2;
 
-    public void ExplodeObject(FigurCreater figurCreater, GameObject explosionObject)
+    public void ExplodeObject(FigurCreater figurCreater, Figure explosionFigure)
     {
-        _figure = explosionObject.GetComponent<Figure>();
-
-        if (_figure.IsDivision())
+        if (explosionFigure.IsDivision())
         {
-            CreateParticleExplosion(figurCreater, explosionObject);
+            CreateParticleExplosion(figurCreater, explosionFigure);
         }
         else
         {
-            Collider[] overlappedColliders = Physics.OverlapSphere(explosionObject.transform.position, _radius);
-
-            float scaleX = explosionObject.transform.localScale.x;
-
-            for (int i = 0; i < overlappedColliders.Length; i++)
-            {
-                Rigidbody rigidbody = overlappedColliders[i].attachedRigidbody;
-
-                if(rigidbody != null )
-                {
-                    rigidbody.AddExplosionForce(_force, explosionObject.transform.position/ scaleX, _radius/ scaleX);
-                }
-            }
-
+            CreateExplosion(explosionFigure);
         }
 
-        Destroy(explosionObject);
+        Destroy(explosionFigure.gameObject);
     }
 
-    private void CreateParticleExplosion(FigurCreater figurCreater, GameObject explosionObject)
+    private void CreateExplosion(Figure explosionFigure)
+    {
+        Collider[] overlappedColliders = Physics.OverlapSphere(explosionFigure.transform.position, _radius);
+
+        float scaleX = explosionFigure.transform.localScale.x;
+
+        for (int i = 0; i < overlappedColliders.Length; i++)
+        {
+            Rigidbody rigidbody = overlappedColliders[i].attachedRigidbody;
+
+            if (rigidbody != null)
+            {
+                rigidbody.AddExplosionForce(_force, explosionFigure.transform.position / scaleX, _radius / scaleX);
+            }
+        }
+    }
+
+    private void CreateParticleExplosion(FigurCreater figurCreater, Figure explosionFigure)
     {
         int countParticle = Random.Range(_minRandomParticles, _maxRandomParticles);
-        int chansDivision = _figure.GetChanceDivision() / _multiplicityDivision;
+        int chansDivision = explosionFigure.GetChanceDivision() / _multiplicityDivision;
 
         for (int i = 0; i < countParticle; i++)
         {
-            Figure partExplode = figurCreater.CreateFigur(explosionObject.transform.position, explosionObject.transform.localScale / _multiplicityDivision);
+            Figure partExplode = figurCreater.CreateFigur(explosionFigure.transform.position, explosionFigure.transform.localScale / _multiplicityDivision);
 
             partExplode.SetChanceDivision(chansDivision);
         }
